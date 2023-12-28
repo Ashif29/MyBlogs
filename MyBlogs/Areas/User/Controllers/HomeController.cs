@@ -4,9 +4,9 @@ using MyBlogs.Data.Repository.IRepository;
 using MyBlogs.Models;
 using System.Diagnostics;
 
-namespace MyBlogs.Areas.Admin.Controllers
+namespace MyBlogs.Areas.User.Controllers
 {
-    [Area("Admin")]
+    [Area("User")]
     public class HomeController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -19,6 +19,19 @@ namespace MyBlogs.Areas.Admin.Controllers
         {
             List<MyBlog> objMyBlogList = _unitOfWork.MyBlog.GetAll().ToList();
             return View(objMyBlogList);
+        }
+        public IActionResult Details(int? id)
+        {
+            if(id == null || id == 0)
+            {
+                return NotFound();
+            }
+            MyBlog? myblogFromDb = _unitOfWork.MyBlog.Get(u => u.Id == id);
+            if (myblogFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(myblogFromDb);
         }
 
         public IActionResult Privacy()

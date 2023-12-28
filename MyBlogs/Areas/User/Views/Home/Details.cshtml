@@ -1,0 +1,38 @@
+﻿@model MyBlog
+
+<div class="container">
+        <div class="ml-0 py-3">
+        <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="text-white py-2">@Model.Title</h1>
+                </div>
+            </div>
+        </div>
+
+            <div class="row mt-4">
+                <div class="col-3"></div>
+                <div class="col-6">
+                <img src="@Model.imgUrl" width="100%" style="border:1px solid #bbb9b9" />
+                </div>
+                <div class="col-3"></div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-6 text-start">
+                    <p>Author : @Model.Author</p>
+                </div>
+                <div class="col-6 text-end">
+                <p>Date : @Model.CreatedDate</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                <p class="text-center"> <i>@Model.Body</i></p>
+                </div>
+            </div>
+            <div class="mt-2"> <hr /> </div>
+        </div>
+</div>
