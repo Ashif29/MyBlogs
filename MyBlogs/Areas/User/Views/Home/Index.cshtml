@@ -4,18 +4,15 @@
 <div class="row pb-3">
     @foreach(var obj in Model)
     {
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-lg-4 col-sm-3">
             <div class="row p-2">
                 <div class="col-12 p-1">
                     <div class="card border-0 p-3 shadow border-top border-5 rounded">
-                        <img src="@obj.imgUrl" class="card-img-top rounded" />
+                        <img src="@obj.imgUrl" class="card-img-top rounded" height="200" />
                         <div class="card-body pb-0">
                             <div class="pl-1">
                                 <p class="card-title h6 text-dark opacity-75 text-uppercase text-center">@obj.Title</p>
                                 <p class="card-title text-warning text-center">by <b>@obj.Author</b></p>
-                            </div>
-                            <div class="pl-1">
-                                <p class="text-dark text-opacity-75 text-center">Created : <span>@obj.CreatedDate</span></p>
                             </div>
                         </div>
                         <div>
